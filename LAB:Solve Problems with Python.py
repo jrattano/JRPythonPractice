@@ -25,9 +25,9 @@ Code Template:
 
 def send_discount(books_purchased, discount_threshold):
     if books_purchased <= discount_threshold:
-        print("No discount")
+        print("No discount.")
     else:
-        print("Discount aplied!")
+        print("Discount applied!")
     pass
 
 """
@@ -73,9 +73,9 @@ def send_discount(books_purchased, discount_threshold, bonus_threshold):
     if books_purchased < discount_threshold:
         print("No discount.")
     elif books_purchased >= discount_threshold and books_purchased < bonus_threshold:
-        print("Dicount applied!")
+        print("Discount applied!")
     else:
-        print("Big discount applied")
+        print("Big discount applied!")
     pass
 
 """
@@ -225,3 +225,47 @@ lowest_score = sorted_scores[0]
 
 print(highest_score)
 print(lowest_score)
+
+"""
+Step 2: Define a Function to Calculate the Class Average
+Define a function called average_class_score to calculate the average score. Add error handling for cases when the student list is empty.
+
+### YOUR CODE HERE ###
+"""
+
+def average_class_score(input_scores):
+    if input_scores is None:
+        raise ValueError("The student list is empty.")
+    try:
+        sumofscores = sum(input_scores)/len(input_scores)
+    except ZeroDivisionError as e:
+        print("Error: Cannot calculate average for an empty list.")
+        return 0
+    return sumofscores
+"""
+Step 3: Calculate the Average Score
+Use the average_class_score function you defined above to assign the average score to average_score below.
+"""
+### YOUR CODE HERE ###"""
+average_score = average_class_score(sorted_scores)
+
+"""
+Step 4: Handle the Case of an Empty Class
+Check that the average_class_score function can handle an empty class list by running the following code.
+"""
+empty_class = []
+empty_scores = []
+error_average = average_class_score(empty_scores)
+
+"""
+Hints for Activity 3 - Task 2:
+Hint 1
+Error Handling: Use try-except blocks to handle division by zero when calculating the average score.
+Test Your Results:
+"""
+
+# Checking your results 
+print(f"Highest Score: {highest_score}")
+print(f"Lowest Score: {lowest_score}")
+
+print(f"Average Score: {average_score}")
