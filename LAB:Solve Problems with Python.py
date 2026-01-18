@@ -24,7 +24,7 @@ Code Template:
 """
 
 def send_discount(books_purchased, discount_threshold):
-    if books_purchased <= discount_threshold:
+    if books_purchased < discount_threshold:
         print("No discount.")
     else:
         print("Discount applied!")
